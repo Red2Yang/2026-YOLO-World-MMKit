@@ -8,15 +8,15 @@ I'm using YOLO-World in a small program, but [the official GitHub repo](https://
 
 However, when it comes to customizing YOLO-World, we still have to use `mmcv`, `mmyolo`, and `mmengine` to load the models and pretrained weights. So in the end, you have to deal with dependencies and the environment.
 
-In this program, I'm trying to change the situation. That is not only making YOLO-World never annoying like the model on Ultralytics, but also making it convenient to customize.
+In this program, I'm trying to change the situation. That is not only making YOLO-World easy-to-use like the model on Ultralytics, but also making it convenient to customize.
 
 ## FILES
 
 ### Original Work
 
-README: [Original/Origin_README.md](Origin_README.md)
+README: [Original/readme.md](Original/readme.md)
 
-All the files of original work are under the [`Original` folder](Original/).
+All the files of original work are under the [`Original`](Original/) folder.
 
 #### Core configs:
 
@@ -31,19 +31,20 @@ _base_ = ('../../third_party/mmyolo/configs/yolov8/'
           'yolov8_x_syncbn_fast_8xb16-500e_coco.py')
 ```
 
-configs/
-├── finetune_coco/          
-├── image_prompts/          
-├── pretrain/               
-├── pretrain_v1/            # not use, cannot export
-├── prompt_tuning_coco/     
-└── segmentation/           
+**configs/**
 
-config file's name 
+- finetune_coco/          
+- image_prompts/        
+- pretrain/      
+- pretrain_v1/            # not use, cannot export
+- prompt_tuning_coco/     
+- segmentation/           
+
+**config file's name **
 
 The configuration file name follows the following pattern:
 
-`Model version`_`module configuration`_`optimizer`_`learning rate`_`training rounds`_`hardware configuration`_`task description`.py
+`Model version` _ `module configuration` _ `optimizer` _ `learning rate` _ `training rounds` _ `hardware configuration` _ `task description`.py
 
 example：yolo_world_v2_l_vlpan_bn_2e-4_80e_8gpus_mask-refine_finetune_coco.py
 - yolo_world_v2: YOLO-World V2

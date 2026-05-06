@@ -1,6 +1,12 @@
 # Dockerfile build
 
-Build:
+build：
+
+```
+docker build -t YOLO-World-MMkit-env .
+```
+
+run:
 
 ```
 docker run --gpus all -it\

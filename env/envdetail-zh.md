@@ -3,7 +3,11 @@
 中文版本
 
 构建：
+```
+docker build -t YOLO-World-MMkit-env .
+```
 
+运行：
 ```
 docker run --gpus all -it\
   -v /path/to/YOLO-World-MMkit:/workspace \

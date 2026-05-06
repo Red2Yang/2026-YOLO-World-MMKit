@@ -20,7 +20,7 @@ My option is to use docker to install mmcv and I recommand you to use this too, 
 
 The file of dockerfile is under the [env](env/) folder.
 
-The detail file is [here](env/envdetail.md)
+The detail file is [here](env/envdetail.md).
 
 ### Original Work
 
@@ -28,4 +28,4 @@ README: [Original/readme.md](Original/readme.md)
 
 All the files of original work are under the [Original](Original/) folder.
 
-The detail file is [here](Original/originaldetail.md)
+The detail file is [here](Original/originaldetail.md).

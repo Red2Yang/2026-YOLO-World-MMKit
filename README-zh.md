@@ -15,7 +15,8 @@
 - [x] 移植“configs”
 - [x] 移植“yolo_world”
 - [x] 移植“tools”
-- [_] 移植“导出oonx”
+- [ ] 移植“导出oonx”
+
 
 - [x] 环境构建文档
 - [ ] 使用文档

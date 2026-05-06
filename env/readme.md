@@ -1,5 +1,7 @@
 # Dockerfile build
 
+[switch to Chinese](readme-zh.md)
+
 ## how to use
 
 build：

@@ -47,6 +47,8 @@ docker run --gpus all -it \
   /bin/bash
 ```
 
+之后你可以使用`docker exec -it YOLO-World-MMkit-env /bin/bash`再次进入容器。
+
 ### 下载组件
 
 Dockerfile内没有拷贝或下载`mmyolo`代码、`YOLO-World`代码及`huggingface`模型，需要你自行下载并挂载。
@@ -68,7 +70,7 @@ cp ./huggingface ~/.cache/huggingface
 
 ```
 # 确保添加sys.Path
-echo 'export PYTHONPATH=/workspace/YOLO-World:/workspace/YOLO-World/third_party/mmyolo:$PYTHONPATH' >> ~/.bashrc
+echo 'export PYTHONPATH=/workspace:/workspace/path/to/mmyolo:$PYTHONPATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 

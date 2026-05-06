@@ -23,8 +23,6 @@ from mmyolo.models.dense_heads import YOLOv8HeadModule, YOLOv8Head
 from mmyolo.models.utils import gt_instances_preprocess
 from mmcv.cnn.bricks import build_norm_layer
 
-import inspect
-
 @MODELS.register_module()
 class ContrastiveHead(BaseModule):
     """Contrastive Head for YOLO-World
@@ -362,6 +360,8 @@ class YOLOWorldHead(YOLOv8Head):
     """YOLO World v8 head."""
 
     def loss(self, img_feats, txt_feats, txt_masks, batch_data_samples):
+        """Perform forward propagation and loss calculation of the detection
+        head on the features of the upstream network."""
         outs = self(img_feats, txt_feats, txt_masks)
         cls_scores, bbox_preds, bbox_dist_preds = outs
 

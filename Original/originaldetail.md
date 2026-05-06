@@ -73,6 +73,68 @@ change it to:
 self.text_feats, _ = self.backbone.forward_text(texts)
 ```
 
+
+351th to 368th in `yolo_world/models/dense_heads/yolo_world_head.py`
+
+```
+    def __init__(self, world_size=-1, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        self.world_size = world_size
+
+    """YOLO World v8 head."""
+
+    def loss(self, img_feats: Tuple[Tensor], txt_feats: Tensor,
+             txt_masks: Tensor, batch_data_samples: Union[list, dict]) -> dict:
+        """Perform forward propagation and loss calculation of the detection
+        head on the features of the upstream network."""
+
+        outs = self(img_feats, txt_feats, txt_masks)
+        # Fast version
+        loss_inputs = outs + (batch_data_samples['bboxes_labels'],
+                              batch_data_samples['img_metas'])
+        losses = self.loss_by_feat(*loss_inputs)
+
+        return losses
+```
+
+change it to:
+
+```
+    def __init__(self, world_size=-1, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        # 从 head_module 获取类别数，并更新 Head 和 Assigner
+        if hasattr(self, 'head_module') and hasattr(self.head_module, 'num_classes'):
+            self.num_classes = self.head_module.num_classes
+            # 如果分配器已存在（通常在 special_init 中创建），同步更新其 num_classes
+            if hasattr(self, 'assigner') and hasattr(self.assigner, 'num_classes'):
+                self.assigner.num_classes = self.num_classes
+        self.world_size = world_size
+
+    """YOLO World v8 head."""
+
+    def loss(self, img_feats, txt_feats, txt_masks, batch_data_samples):
+        """Perform forward propagation and loss calculation of the detection
+        head on the features of the upstream network."""
+        outs = self(img_feats, txt_feats, txt_masks)
+        cls_scores, bbox_preds, bbox_dist_preds = outs
+
+        # batch_data_samples 中的原始数据
+        batch_gt_instances = batch_data_samples['bboxes_labels']   # Tensor，YOLO-World 内部会处理
+        batch_img_metas = batch_data_samples['img_metas']          # list[dict]
+        batch_text_masks = txt_masks
+
+        # 严格按签名顺序传参
+        losses = self.loss_by_feat(
+            cls_scores,
+            bbox_preds,
+            bbox_dist_preds,
+            batch_text_masks,         # 第4个参数
+            batch_gt_instances,       # 第5个参数
+            batch_img_metas           # 第6个参数
+        )
+        return losses
+```		
+
 ----
 
 ## [demo](demo/):

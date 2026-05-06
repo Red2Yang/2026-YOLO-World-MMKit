@@ -69,9 +69,15 @@ cp ./huggingface ~/.cache/huggingface
 在`/workspace/utils/mmyolo/`运行`pip3 install -e .`以安装`mmyolo`。
 
 ```
-# 确保添加sys.Path
+# 找不到可以确保添加sys.Path
 echo 'export PYTHONPATH=/workspace:/workspace/path/to/mmyolo:$PYTHONPATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
 在`/workspace/src/`运行`pip3 install -e .`以安装`YOLO-World`。
+
+```
+# 找不到可以确保添加sys.Path
+echo 'export PYTHONPATH=/workspace:/workspace/path/to/yolo_orld:$PYTHONPATH' >> ~/.bashrc
+source ~/.bashrc
+```

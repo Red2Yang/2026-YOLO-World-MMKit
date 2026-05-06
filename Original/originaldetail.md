@@ -61,6 +61,8 @@ These are the core component of the program.
 
 Yes, there are some problems in the original `yolo_world/`. I have fixed them in my code, but you can still get it in the Original Work. Here we go:
 
+**Issue 1**
+
 61th in `yolo_world/models/detectors/yolo_world.py`
 
 ```
@@ -73,6 +75,7 @@ change it to:
 self.text_feats, _ = self.backbone.forward_text(texts)
 ```
 
+**Issue 2**
 
 351th to 368th in `yolo_world/models/dense_heads/yolo_world_head.py`
 
@@ -134,6 +137,40 @@ change it to:
         )
         return losses
 ```		
+
+**Issue 3**
+
+MMEngine has a global registry, while MMYOLO (as well as YOLO-World) have defined its own registry or extended MMEngine's registry. When directly using MMEngine's construction functions (such as MODELS.build), if the model class is only registered in MMYOLO's registry and has not propagated to MMEngine's registry, the class will not be found.
+
+change `yolo_world/__init__.py` to:
+
+```
+# Copyright (c) Tencent Inc. All rights reserved.
+import importlib.metadata as importlib_metadata
+from .models import *  # noqa
+from .datasets import *  # noqa
+from .engine import *  # noqa
+
+try:
+    __version__ = importlib_metadata.version(__package__ or __name__)
+except importlib_metadata.PackageNotFoundError:
+    __version__ = '0.0.0'
+
+from mmengine.registry import MODELS as MMENGINE_MODELS
+from mmyolo.registry import MODELS as MMYOLO_MODELS
+
+def _register_custom_modules():
+    """register mmengine MODELS"""
+    for name, module_class in MMYOLO_MODELS.module_dict.items():
+        if name not in MMENGINE_MODELS.module_dict:
+            MMENGINE_MODELS.register_module(name=name, module=module_class)
+            # print(f"Auto-registered {name} to mmengine registry from yolo_world")
+
+_has_registered = getattr(MMENGINE_MODELS, '_yolo_world_registered', False)
+if not _has_registered:
+    _register_custom_modules()
+    MMENGINE_MODELS._yolo_world_registered = True
+```
 
 ----
 

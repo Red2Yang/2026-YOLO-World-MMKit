@@ -16,7 +16,7 @@ In this program, I'm trying to change the situation. That is not only making YOL
 
 #### The environment
 
-My option is to use docker to install mmcv and I recommand you to use this too, except that you want to learn how to build the environment. You can use linux server or `Windows Subsystem for Linux`(wsl2) to run docker.
+My option is to use docker to install mmcv and I recommand you to use this too, except that you want to learn how to build the environment. You can use ubuntu server or `Windows Subsystem for Linux`(wsl2) to run docker.
 
 The file of dockerfile is under the [env](env/) folder.
 

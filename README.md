@@ -12,6 +12,17 @@ However, when it comes to customizing YOLO-World, we still have to use `mmcv`, `
 
 In this program, I'm trying to change the situation. That is not only making YOLO-World easy-to-use like the model on Ultralytics, but also making it convenient to customize.
 
+## 清单
+
+[x] 移植“configs”
+[x] 移植“yolo_world”
+[x] 移植“tools”
+[_] 移植“导出oonx”
+
+[x] 环境构建文档
+[ ] 使用文档
+[ ] 迁移学习文档
+
 ## FILES
 
 ### My Work

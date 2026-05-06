@@ -10,6 +10,17 @@
 
 在这个项目中，我试图改变现状。不仅要让YOLO-World像Ultralytics上的模型一样易于使用，还要使其便于定制。
 
+## 清单
+
+[x] 移植“configs”
+[x] 移植“yolo_world”
+[x] 移植“tools”
+[_] 移植“导出oonx”
+
+[x] 环境构建文档
+[ ] 使用文档
+[ ] 迁移学习文档
+
 ## 文件
 
 ### 我的工作
@@ -36,7 +47,7 @@
 
 ### 原作
 
-我保存了所有原始代码，以表达对YOLO-World团队贡献的敬意。
+我保存了所有原始代码，以表达对YOLO-World团队的敬意。
 - 位置：          [Original/](Original/) 
 - 自述文件：       [here](Original/readme.md) 
 - 详细信息（必读）：[here](Original/originaldetail.md)

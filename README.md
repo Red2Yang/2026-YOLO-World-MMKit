@@ -16,6 +16,10 @@ In this program, I'm trying to change the situation. That is not only making YOL
 
 ### My Work
 
+#### How to use?
+
+First, prepare the environment. Second, set your config and load datasets. Third, use tools to train, val or test. Fourth, use demo to try output.
+
 #### Environment
 
 My option is to use docker to install mmcv and I recommand you to use this too, except that you want to learn how to build the environment. You can use ubuntu server or `Windows Subsystem for Linux`(wsl2) to run docker.

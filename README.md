@@ -37,4 +37,4 @@ Futhermore, I move the class_text_path to the configs folder too.
 I save all the original code to admire the contribution of the YOLO-World team.
 - location: [Original/](Original/)
 - readme:   [here](Original/readme.md)
-- detail (you must see it): [here](Original/originaldetail.md)
+- detail (you must read it): [here](Original/originaldetail.md)

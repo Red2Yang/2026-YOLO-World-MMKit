@@ -59,7 +59,7 @@ These are the core component of the program.
 
 ### Defect
 
-Yes, there are some problems in the original `yolo_world/`. I have fixed them in my code, but you can still get it in Original Work. Here we go:
+Yes, there are some problems in the original `yolo_world/`. I have fixed them in my code, but you can still get it in the Original Work. Here we go:
 
 61th in `yolo_world/models/detectors/yolo_world.py`
 
@@ -146,5 +146,5 @@ In the demo folder there are the scripts for directly testing the output weights
 Run like this:
 
 ```
-python3 demo/image_demo.py configs/mine/myconfig.py checkpoint/epoch_8.pth demo/images/test1.png "ship"
+python3 demo/image_demo.py configs/mine/myconfig.py checkpoint/epoch_8.pth demo/images/test1.jpg "person"
 ```

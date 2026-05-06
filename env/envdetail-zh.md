@@ -4,7 +4,7 @@
 
 ## 驱动
 
-如果你是第一次使用`cuda`的`docker`镜像，那么请先安装`NVIDIA Container Toolkit`
+如果你是第一次使用`cuda`的`docker`镜像，那么请先安装`NVIDIA Container Toolkit`。
 
 在`Ubuntu`系统环境中运行：
 
@@ -40,7 +40,7 @@ docker build -t YOLO-World-MMkit-env .
 运行：
 
 ```
-docker run --gpus all -it\
+docker run --gpus all -it \
   -v /path/to/YOLO-World-MMkit:/workspace \
   -w /workspace \
   YOLO-World-MMkit-env \

@@ -10,6 +10,8 @@ However, when it comes to customizing YOLO-World, we still have to use `mmcv`, `
 
 In this program, I'm trying to change the situation. That is not only making YOLO-World easy-to-use like the model on Ultralytics, but also making it convenient to customize.
 
+----
+
 ## FILES
 
 ### Original Work
@@ -74,11 +76,9 @@ example：yolo_world_v2_l_vlpan_bn_2e-4_80e_8gpus_mask-refine_finetune_coco.py
 
 `engine/*`
 
-#### Original defect
+##### Defect in core component
 
 Yes, there are some problems in the original `yolo_world/`. Here we go:
-
-----
 
 61th in `yolo_world/models/detectors/yolo_world.py`
 
@@ -91,8 +91,6 @@ change it to:
 ```
 self.text_feats, _ = self.backbone.forward_text(texts)
 ```
-
-----
 
 #### [Core demo](Original/demo/):
 

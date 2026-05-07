@@ -29,8 +29,9 @@ RUN pip3 install --upgrade pip \
 
 # install PyTorch 1.12.0 + CUDA 11.6
 RUN pip3 install --no-cache-dir \
-    torch==1.12.0+cu116 \
-    torchvision==0.13.0+cu116 \
+    torch==1.12.1+cu116 \
+    torchvision==0.13.1+cu116 \
+    torchaudio==0.12.1 \
     --extra-index-url https://download.pytorch.org/whl/cu116 #--default-timeout=100 (use it if your network is not fast)
 
 # install MMCV 2.0.1

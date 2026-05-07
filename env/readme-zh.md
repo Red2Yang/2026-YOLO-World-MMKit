@@ -78,6 +78,6 @@ source ~/.bashrc
 
 ```
 # 找不到可以确保添加sys.Path
-echo 'export PYTHONPATH=/workspace:/workspace/path/to/yolo_orld:$PYTHONPATH' >> ~/.bashrc
+echo 'export PYTHONPATH=/workspace:/workspace/path/to/src:$PYTHONPATH' >> ~/.bashrc
 source ~/.bashrc
 ```

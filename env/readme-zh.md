@@ -34,7 +34,7 @@ sudo systemctl restart docker
 构建：
 
 ```
-docker build -t YOLO-World-MMkit-env .
+docker build -t yw-env .
 ```
 
 运行：
@@ -43,7 +43,7 @@ docker build -t YOLO-World-MMkit-env .
 docker run --gpus all -it \
   -v /path/to/YOLO-World-MMkit:/workspace \
   -w /workspace \
-  YOLO-World-MMkit-env \
+  yw-env \
   /bin/bash
 ```
 
@@ -63,6 +63,8 @@ python3 -c "from transformers import CLIPTokenizer; CLIPTokenizer.from_pretraine
 # 下载位置"~/.cache/huggingface"，将/huggingface文件夹挂载到容器内后
 cp ./huggingface ~/.cache/huggingface
 ```
+
+如果要使用本地CLIP模型，需要下载后修改`configs/`内的配置文件，修改`text_model_name`的位置。
 
 ### 安装`mmyolo`和`YOLO-World`
 

@@ -15,7 +15,7 @@ In this program, I'm trying to change the situation. That is not only making YOL
 ## 清单
 
 - [ ] 移植“configs/”
-  - [_] “pretrain/”权重修改
+  - [ ] “pretrain/”权重修改
 - [x] 移植“yolo_world/”
 - [x] 移植“tools/”
 - [ ] 移植“导出oonx”

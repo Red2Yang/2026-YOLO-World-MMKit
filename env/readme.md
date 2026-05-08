@@ -7,7 +7,7 @@
 build：
 
 ```
-docker build -t YOLO-World-MMkit-env .
+docker build -t yw-env .
 ```
 
 run:
@@ -16,6 +16,6 @@ run:
 docker run --gpus all -it \
   -v /path/to/YOLO-World-MMkit:/workspace \
   -w /workspace \
-  YOLO-World-MMkit-env \
+  yw-env \
   /bin/bash
 ```

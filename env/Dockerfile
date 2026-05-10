@@ -27,11 +27,11 @@ RUN pip3 install --upgrade pip \
         openmim==0.3.9 \
         --retries=5
 
-# install PyTorch 1.12.0 + CUDA 11.6
+# install PyTorch 1.13.0 + CUDA 11.6
 RUN pip3 install --no-cache-dir \
-    torch==1.12.1+cu116 \
-    torchvision==0.13.1+cu116 \
-    torchaudio==0.12.1 \
+    torch==1.13.0+cu116 \
+    torchvision==0.14.0+cu116 \
+    torchaudio==0.13.0 \
     --extra-index-url https://download.pytorch.org/whl/cu116 #--default-timeout=100 (use it if your network is not fast)
 
 # install MMCV 2.0.1
@@ -44,4 +44,6 @@ RUN pip3 install mmdet==3.2.0
 # install transformers
 RUN pip3 install transformers
 
+# install peft
+RUN pip3 install nvidia-cudnn-cu11 peft
 CMD ["/bin/bash"]

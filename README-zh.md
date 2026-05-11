@@ -1,4 +1,4 @@
-# 2026-YOLO-World-MMKit
+# 2026-YOLO-World-`mmcv`工具集
 
 基于[AILab-CVC/YOLO-World](https://github.com/AILab-CVC/YOLO-World)项目分支而来。
 
@@ -8,7 +8,7 @@
 
 然而，在自定义YOLO-World时，我们仍然需要使用`mmcv`、`mmengine`和`mmyolo`来加载模型和预训练权重，而不能直接通过Ultralytics。因此，最终你还是需要处理依赖关系和环境问题。
 
-在这个项目中，我试图改变现状。不仅要让YOLO-World像Ultralytics上的模型一样易于使用，还要使其便于定制。
+在这个项目中，我试图改变现状。不仅要让YOLO-World像Ultralytics上的模型一样易于使用，还要使其便于定制。同时，我会提供一些我对模型的修改，方便后人使用。
 
 ## 清单
 
@@ -17,6 +17,10 @@
 - [x] 移植“yolo_world/”
 - [x] 移植“tools/”
 - [ ] 移植“导出oonx”
+
+- [ ] 代码修改
+  - [x] 修复原代码缺陷
+  - [ ] 引入LoRA  
 
 - [ ] 使用文档
   - [x] 环境构建文档
